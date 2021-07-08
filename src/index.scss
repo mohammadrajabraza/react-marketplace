@@ -5,15 +5,20 @@ $background-color : #FFFFFF;
 $full-width : 100%;
 $containers-width : 70%;
 $navbar-bacground : #F7F8F8;
+html {
+  font-size: 62.5%;
+}
 
 body {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: -apple-system, Roboto,Helvetica,Arial,sans-serif,
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: $background-color;
-  font-size: 10px;
+  // font-size: 10px;
 }
 
 code {
@@ -21,7 +26,19 @@ code {
     monospace;
 }
 
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+a, a:hover, a:active {
+  text-decoration: none;
+}
 .app{
+  position: relative;
+  height: 100vh;
+  width: 100%;
+
   .header {
     width: $full-width;
     background-color: $navbar-bacground;
@@ -30,19 +47,37 @@ code {
 
     .header-items-container {
       width: $containers-width;
+      margin: 0 auto;
       justify-content: flex-start;
       
       .item-location-search-container {
         width: 25%;
         padding: 2px 5px;
         select {
-          width: 60%;
-          height: 35px;
+          width: 80%;
+          height: 48px;
         }
       }
       
       .item-post-search {
-        width: 50%;
+        width: 73.2rem;
+        height: 50px;
+        input {
+          height: 48px;
+          color: #002f34;
+          font-size: 1.596rem;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          background: none;
+          border: 1px solid #000;
+          outline: none;
+          padding: 0 0 0 1.2rem;
+        
+          &:focus {
+            border: 1px solid #2FA49F;
+          }
+        }
       }
 
       .item-auth-greeting{
@@ -52,8 +87,8 @@ code {
         
         a {
           color: #000;
-          font-weight: bold;
-          text-decoration: none;
+          font-weight: 700;
+          font-size: 1.596rem;
           border-bottom: 2px solid #000;
           padding-bottom: 2px;
 
@@ -69,7 +104,9 @@ code {
 
 
   }
-
+  // ------------------------
+  // Navigation section start
+  // ------------------------
   .nav {
     height: 48px;
     width: $containers-width;
@@ -81,7 +118,7 @@ code {
     }
 
     .nav-bar {
-      font-size: 0.9rem;
+      font-size: 1rem;
 
       ul {
         list-style: none;
@@ -104,6 +141,89 @@ code {
 
 
   }
+  // -----------------------
+  // Navigation section ends
+  // -----------------------
+
+
+  // --------------------
+  // Footer section start
+  // --------------------
+
+  .footer{
+    width: 100%;
+    position: absolute;
+    bottom: 20px;
+    height: 244px;
+
+    .footer-nav-container {
+      width: 100%;
+      height: 194px;
+      padding: 1.6rem 0 6.4rem;
+      background-color: #ebeeef;
+      border-top: 1px solid rgba(0,47,52,.2);
+
+      .nav{
+        width: $containers-width;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        section {
+          padding: 0 10px;
+          width: 20%;
+        }
+        span {
+          font-weight: 700;
+          font-size: 1.5rem;
+          text-transform: uppercase;
+        }
+
+        li {
+          font-size: 1.204rem;
+
+          a {
+            color: rgba(0,47,52,.64);
+          
+            &:hover {
+              color: #000;
+            }
+          }
+
+        }
+
+        .social-container {
+          display: flex;
+          align-items: center;
+
+          img{
+            width: 24px;
+          }
+        }
+      }
+    }
+
+    .copyright-container {
+      height: 5rem;
+      width: 100%;
+      background: #002f34;
+      padding: 1.6rem 0;
+      justify-content: center;
+
+      .copyright {
+        width: $containers-width;
+        text-align: right;
+        color: #fff;
+        font-size: 1.204rem;
+        margin: 0 auto;
+      
+      }
+    }
+  }
+
+  // -------------------
+  // Footer section ends
+  // -------------------
 }
 
 .auth-container {
