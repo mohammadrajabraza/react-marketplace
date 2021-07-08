@@ -1,9 +1,11 @@
 import './App.scss';
+import { Header } from './components/index' 
 
 function App() {
   return (
     <div className="app">
-          </div>
+      <Header/>
+    </div>
   );
 }
 
