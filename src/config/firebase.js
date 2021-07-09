@@ -36,10 +36,15 @@ function getUser(id) {
         return undefined
     })
     .catch((e) => e)
-} 
+}
+
+function login(email, password) {
+  return auth.signInWithEmailAndPassword(email, password)
+}
 
 export {
   register,
   addUser,
-  getUser
+  getUser,
+  login
 }
