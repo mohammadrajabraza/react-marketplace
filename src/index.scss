@@ -36,7 +36,7 @@ a, a:hover, a:active {
 }
 .app{
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
 
   .header {
@@ -145,6 +145,21 @@ a, a:hover, a:active {
   // Navigation section ends
   // -----------------------
 
+  // --------------------
+  // Banner section start
+  // --------------------
+
+  .banner {
+    height: 25.2rem;
+    background: url(assets/images/banner.jpg);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+  }
+
+  // -------------------
+  // Banner section ends
+  // -------------------
 
   // --------------------
   // Footer section start
@@ -152,8 +167,9 @@ a, a:hover, a:active {
 
   .footer{
     width: 100%;
-    position: absolute;
-    bottom: 20px;
+    // position: absolute;
+    // bottom: 20px;
+    margin-bottom: 20px;
     height: 244px;
 
     .footer-nav-container {
@@ -224,12 +240,22 @@ a, a:hover, a:active {
   // -------------------
   // Footer section ends
   // -------------------
+
+  .body-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: $containers-width;
+    margin: 5.5rem auto 6.5rem;
+  }
+  .auth-container {
+    height: auto;
+    width: 400px;
+    border: 1px solid gray;
+    padding: 50px 10px;
+    border-radius: 15px;
+
+  }
 }
 
-.auth-container {
-  height: auto;
-  width: 400px;
-  border: 1px solid gray;
-  padding: 50px 10px;
-  border-radius: 15px;
-}
