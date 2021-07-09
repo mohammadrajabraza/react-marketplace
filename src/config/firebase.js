@@ -13,3 +13,33 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
+
+const auth = firebase.auth()
+const db = firebase.firestore()
+
+function register(email, password){
+  return auth.createUserWithEmailAndPassword(email, password)
+}
+
+function addUser(id, fullname, email, contact) {
+  return db.collection('users').doc(id).set({fullname, email, contact})
+} 
+
+function getUser(id) { 
+  
+  return db.collection('users').doc(id).get()
+    .then((doc)=> {
+      if(doc.exists){
+        return  doc.data()
+      }
+      else
+        return undefined
+    })
+    .catch((e) => e)
+} 
+
+export {
+  register,
+  addUser,
+  getUser
+}
