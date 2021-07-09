@@ -1,11 +1,10 @@
 import { Container, Row, Col, Form, Button} from 'react-bootstrap'
-import {Link, Redirect} from 'react-router-dom'
-function Login() {
-
+import {Link} from 'react-router-dom'
+function Signup() {
     return <div className="auth-container">
                 <Container>
                     <Form>
-                        <h1 > Login</h1>
+                    <h1 > Sign Up</h1>
                         <Form.Group controlId="formBasicUsername" >
                             <Form.Label>Username</Form.Label>
                             <Form.Control type="username" placeholder="Enter username" />
@@ -17,15 +16,15 @@ function Login() {
                         </Form.Group>
                         <Row>
                             <Col className="text-right">
-                                <Link to="/signup">Not Registered? Signup here</Link>
+                                <Link  to="/login">Already Registered? Login here</Link>
                             </Col>
                         </Row>
                         <Button variant="primary" type="button">
-                            Login
+                            Sign Up
                         </Button>
                     </Form>
                 </Container>
             </div> 
     }
 
-export default Login
+export default Signup
