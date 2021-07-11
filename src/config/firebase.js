@@ -16,6 +16,29 @@ firebase.analytics();
 
 const auth = firebase.auth()
 const db = firebase.firestore()
+const storage = firebase.storage()
+
+
+async function storeImages(files) {
+  const urls = []
+
+  for (let i = 0; i < files.length; i++) {
+    const ref = storage.ref(`image/${files[i].name}`)
+    await ref.put(files[i])
+    const url = await ref.getDownloadURL()
+    urls.push(url)
+  }
+  
+  return urls
+}
+
+function addPost(user_id='annonymous', title, price, imagesUrl){
+  return db.collection('posts').add({user_id, title, price, imagesUrl})
+}
+
+function getPosts(cb){
+  return db.collection('posts').get()
+}
 
 function register(email, password){
   return auth.createUserWithEmailAndPassword(email, password)
@@ -30,7 +53,7 @@ function getUser(id) {
   return db.collection('users').doc(id).get()
     .then((doc)=> {
       if(doc.exists){
-        return  doc.data()
+        return  {...doc.data(), id}
       }
       else
         return undefined
@@ -46,5 +69,8 @@ export {
   register,
   addUser,
   getUser,
-  login
+  login,
+  storeImages,
+  addPost,
+  getPosts
 }
