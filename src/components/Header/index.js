@@ -1,5 +1,5 @@
-
-import {Navbar, Container, Row, Col, InputGroup, FormControl, Button} from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import {Navbar, Container, InputGroup, FormControl, Button} from 'react-bootstrap'
 import { AuthNGreet } from '..'
 export default function Header(){
 
@@ -23,11 +23,14 @@ export default function Header(){
                         aria-describedby="basic-addon2"
                     />
                     <InputGroup.Append>
-                        <Button variant="outline-secondary">Button</Button>
+                        <Button variant="outline-secondary">Search</Button>
                     </InputGroup.Append>
                     </InputGroup>
                 </div>
                 <AuthNGreet/>
+                <Link to="/postAd">
+                    <Button variant="primary" type="button">Post Ad</Button>
+                </Link>
 
             </Container>
         </Navbar>
