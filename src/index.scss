@@ -1,4 +1,5 @@
 @import "../node_modules/bootstrap/scss/bootstrap";
+@import "../node_modules/react-image-gallery/styles/scss/image-gallery.scss";
 @import "custom";
 
 $background-color : #FFFFFF;
@@ -277,6 +278,32 @@ a, a:hover, a:active {
       height: 3.5rem;
       font-size: 1.2rem;
       font-weight: 700;
+    }
+  }
+
+  .posts-container {
+    width: $containers-width;
+
+    .post{
+      width: 25%;
+      max-width: 400px;
+      margin: 5px;
+      padding: 5px;
+      border: 1px solid #002f34;
+      float: left;
+    
+      img {
+        width: 150px;
+        height: 150px;
+      }
+    }
+  }
+
+  .post-details-container{
+    width: $containers-width;
+    .post-details-image-grid{
+      width: 50%;
+      height: 100px;
     }
   }
 }
