@@ -3,9 +3,12 @@ import {Link, Redirect} from 'react-router-dom'
 import {useState} from 'react'
 import {login, getUser} from '../../config/firebase'
 import swal from 'sweetalert'
-function Login({activeUser, setActiveUser}) {
+import {useSelector, useDispatch} from 'react-redux'
+import {setActiveUser} from '../../store/actions/usersActions'
+function Login() {
 
-
+    const activeUser = useSelector(state => state.user)
+    const dispatch = useDispatch()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     let user_id;
@@ -36,7 +39,7 @@ function Login({activeUser, setActiveUser}) {
                 text: 'User login successfully!',
                 icon: "success"
             })
-            setActiveUser(user)
+            dispatch(setActiveUser(user))
         }
         catch(e) {
             const {code, message} = e
