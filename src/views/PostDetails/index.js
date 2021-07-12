@@ -7,7 +7,6 @@ function PostDetails(props) {
 
     const [posts, setPosts] = useState([])
     const [postIndex, setCurrentPostIndex] = useState(-2)
-    const [images, setImages] = ([])
     const {postId} = useParams()
 
 
@@ -22,20 +21,6 @@ function PostDetails(props) {
             setCurrentPostIndex(posts.findIndex((post) => post.id === postId ))
         }        
     },[posts, postId])
-
-    // useEffect(() => {
-    //     if(posts.length > 0 && posts[0].imagesUrl !== undefined
-    //         && postIndex !== -2 && postIndex !== -1){
-    //         let imageArray = posts[postIndex].imagesUrl.map( image => {
-    //             return {original : image}
-    //         })
-    //         setImages(imageArray)
-    //         console.log(posts)
-    //         console.log(posts[0].imagesUrl)
-    //     }
-        
-    // }, [posts])
-
 
     return ( 
         posts.length > 0 && postIndex !== -2 && postIndex !== -1 ?
