@@ -13,10 +13,10 @@ export default function Footer() {
                                 POPULAR CATEGORIES
                             </span>
                             <ul>
-                                <li><a href="#">Cars</a></li>
-                                <li><a href="#">Flat for rent</a></li>
-                                <li><a href="#">Mobile Phones</a></li>
-                                <li><a href="#">Jobs</a></li>
+                                <li><a href="/">Cars</a></li>
+                                <li><a href="/">Flat for rent</a></li>
+                                <li><a href="/">Mobile Phones</a></li>
+                                <li><a href="/">Jobs</a></li>
                             </ul>
                         </section>
 
@@ -25,10 +25,10 @@ export default function Footer() {
                                 TRENDING SEARCH
                             </span>
                             <ul>
-                                <li><a href="#">Bike</a></li>
-                                <li><a href="#">Watches</a></li>
-                                <li><a href="#">Book</a></li>
-                                <li><a href="#">Dogs</a></li>
+                                <li><a href="/">Bike</a></li>
+                                <li><a href="/">Watches</a></li>
+                                <li><a href="/">Book</a></li>
+                                <li><a href="/">Dogs</a></li>
                             </ul>
                         </section>
 
@@ -37,10 +37,10 @@ export default function Footer() {
                                 ABOUT US
                             </span>
                             <ul>
-                                <li><a href="#">About EMPG</a></li>
-                                <li><a href="#">OLX Blog</a></li>
-                                <li><a href="#">Contact Us</a></li>
-                                <li><a href="#">OLX for businesses</a></li>
+                                <li><a href="/">About EMPG</a></li>
+                                <li><a href="/">OLX Blog</a></li>
+                                <li><a href="/">Contact Us</a></li>
+                                <li><a href="/">OLX for businesses</a></li>
                             </ul>
                         </section>
                         <section>
@@ -48,9 +48,9 @@ export default function Footer() {
                                 OLX
                             </span>
                             <ul>
-                                <li><a href="#">Help</a></li>
-                                <li><a href="#">Sitemap</a></li>
-                                <li><a href="#">Legal and Privacy Information</a></li>
+                                <li><a href="/">Help</a></li>
+                                <li><a href="/">Sitemap</a></li>
+                                <li><a href="/">Legal and Privacy Information</a></li>
                             </ul>
                         </section>
                         <section>
@@ -58,10 +58,10 @@ export default function Footer() {
                                 Follow US
                             </span>
                             <div className="social-container">
-                                <a href="#"><img alt="" src={FacebookIcon}/></a>
-                                <a href="#"><img alt="" src={TwitterIcon}/></a>
-                                <a href="#"><img alt="" src={YoutubeIcon}/></a>
-                                <a href="#"><img alt="" src={InstagramIcon}/></a>
+                                <a href="/"><img alt="" src={FacebookIcon}/></a>
+                                <a href="/"><img alt="" src={TwitterIcon}/></a>
+                                <a href="/"><img alt="" src={YoutubeIcon}/></a>
+                                <a href="/"><img alt="" src={InstagramIcon}/></a>
                             </div>
                         </section>
                     </div>
