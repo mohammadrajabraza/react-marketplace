@@ -1,5 +1,6 @@
 import { Container, Form, Button} from 'react-bootstrap'
 import  {useState} from 'react'
+import { Redirect } from 'react-router-dom'
 import {storeImages, addPost} from '../../config/firebase'
 import swal from 'sweetalert'
 
@@ -54,9 +55,9 @@ export default function PostAd({activeUser}) {
     } 
 
 
-    // return Object.keys(activeUser).length === 0 ?
-    //         <Redirect to="/login"/> :
-        return    <div className="form-container">
+    return Object.keys(activeUser).length === 0 ?
+            <Redirect to="/login"/> :
+            <div className="form-container">
                 <Container>
                     <Form onSubmit={createAd}>
                     <h1 > Post Your Ad </h1>
