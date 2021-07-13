@@ -4,7 +4,7 @@ import {useState} from 'react'
 import { register, addUser, getUser } from '../../config/firebase'
 import swal from 'sweetalert'
 import {useDispatch, useSelector} from 'react-redux'
-import {setActiveUser} from '../../store/actions/usersActions'
+import {setActiveUser} from '../../store/actions/users'
 
 
 function Signup() {
@@ -72,9 +72,6 @@ function Signup() {
                 dangerMode: true
             })
         }
-        // finally{
-        //     resetFeilds()
-        // }
     }
 
     const resetFeilds = () => {
