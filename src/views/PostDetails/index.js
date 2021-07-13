@@ -1,19 +1,14 @@
 import { useState, useEffect} from 'react'
 import {useParams, Redirect} from 'react-router-dom'
 import ImageGallery from 'react-image-gallery'
+import {useSelector} from 'react-redux'
 
 
-function PostDetails(props) {
+function PostDetails() {
 
-    const [posts, setPosts] = useState([])
+    const posts = useSelector(state => state.posts)
     const [postIndex, setCurrentPostIndex] = useState(-2)
     const {postId} = useParams()
-
-
-    // getting post from the app component everytime page renders
-    useEffect(() => {
-        setPosts(props.getPosts())
-    }, [props])
 
     //verifies if the passes id in the params is available
     useEffect(() => {
