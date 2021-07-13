@@ -1,43 +1,39 @@
 import './App.scss';
 import { Header, Navigation, Banner, Footer } from './components/' 
-import {Login, Signup, Dashboard, Profile, PostAd, PostDetails} from './views'
-import {Switch, Route, useRouteMatch} from 'react-router-dom'
-import { useState, useEffect } from 'react';
-import {getPosts} from './config/firebase'
+import { Login, Signup, Dashboard, Profile, PostAd, PostDetails } from './views'
+import { Switch, Route, useRouteMatch } from 'react-router-dom'
+import { useEffect } from 'react';
+import { getPosts } from './config/firebase'
+import { useDispatch } from 'react-redux';
+import { setAllPosts } from './store/actions/posts'
 import swal from 'sweetalert';
 
 function App() {
 
   let match = useRouteMatch()
-  const [activeUser, setActiveUser] = useState({})
-  const [posts, setPosts] = useState([])
-  
-  const getPostsForComponent = () => {
-    return posts
-  }
+  const dispatch = useDispatch()  
 
   const fetchPostsFromDB = async () => {
     try{
-        const posts_result =  await getPosts()
-        const tempPost = []
-        posts_result.forEach(post => {
-            tempPost.push({...post.data(), id: post.id})
-        })
-        setPosts(tempPost)
-        console.log(tempPost)
+      const posts_result =  await getPosts()
+      const tempPost = []
+      posts_result.forEach(post => {
+        tempPost.push({...post.data(), id: post.id})
+      })
+      dispatch(setAllPosts(tempPost))
     }
     catch(e){
-        const {code, message} = e
-        swal({
-            title: code,
-            text: message,
-            icon: "error",
-            dangerMode: true
-        })
+      const {code, message} = e
+      swal({
+        title: code,
+        text: message,
+        icon: "error",
+        dangerMode: true
+      })
     }
 }
     useEffect(() => {
-        fetchPostsFromDB()
+      fetchPostsFromDB()
     }, [])
 
   return (
@@ -48,22 +44,22 @@ function App() {
       <div className="body-container">
         <Switch>
           <Route path={`${match.path}posts/:postId`}>
-              <PostDetails getPosts={getPostsForComponent}/>
+              <PostDetails/>
           </Route>
           <Route path="/profile">
-            <Profile activeUser={activeUser}/>
+            <Profile/>
           </Route>
           <Route path="/postAd">
-            <PostAd activeUser={activeUser}/>
+            <PostAd/>
           </Route>
           <Route path="/login">
-            <Login activeUser={activeUser} setActiveUser={setActiveUser}/>
+            <Login/>
           </Route>
           <Route path="/signup">
-            <Signup activeUser={activeUser} setActiveUser={setActiveUser}/>
+            <Signup/>
           </Route>
           <Route exact path="/">
-            <Dashboard posts={posts}/>
+            <Dashboard/>
           </Route>
         </Switch>
       </div>
