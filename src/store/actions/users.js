@@ -9,6 +9,7 @@ const removeUser = () => ({
     type: 'USER/REMOVE'
 })
 
+// replaceActiveUser to replace active user
 export {
     setActiveUser,
     removeUser
