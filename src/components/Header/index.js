@@ -7,7 +7,7 @@ export default function Header(){
         <Navbar sticky="top" className="header">
             <Container fluid className="header-items-container">
                 <Navbar.Brand>
-                    <img src="https://www.olx.com.pk/assets/logo_noinline.1cdf230e49c0530ad4b8d43e37ecc4a4.svg"/>
+                    <img alt='' src="https://www.olx.com.pk/assets/logo_noinline.1cdf230e49c0530ad4b8d43e37ecc4a4.svg"/>
                 </Navbar.Brand>
                 <div className="item-location-search-container">
                     <select name="location">
