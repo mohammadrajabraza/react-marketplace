@@ -1,3 +1,10 @@
 import userReducer from "./userSlice";
+import postsReducer from "./postsSlice";
+import {combineReducers} from '@reduxjs/toolkit'
 
-export default userReducer
+const rootReducer = combineReducers({
+    posts: postsReducer,
+    user: userReducer
+});
+
+export default rootReducer
