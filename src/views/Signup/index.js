@@ -3,10 +3,14 @@ import {Link, Redirect} from 'react-router-dom'
 import {useState} from 'react'
 import { register, addUser, getUser } from '../../config/firebase'
 import swal from 'sweetalert'
+import {useDispatch, useSelector} from 'react-redux'
+import {setActiveUser} from '../../store/actions/usersActions'
 
 
-function Signup({activeUser, setActiveUser}) {
+function Signup() {
    
+    const activeUser = useSelector(state => state.user)
+    const dispatch = useDispatch()
     const [fullName, setFullName] = useState('')
     const [contact, setContact] = useState('')
     const [email, setEmail] = useState('')
@@ -39,7 +43,7 @@ function Signup({activeUser, setActiveUser}) {
                 text: 'User registered successfully!',
                 icon: "success"
             })
-            setActiveUser(user)
+            dispatch(setActiveUser(user))
         }
         catch(e){
             const {code, message} = e
