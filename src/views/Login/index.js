@@ -4,7 +4,7 @@ import {useState} from 'react'
 import {login, getUser} from '../../config/firebase'
 import swal from 'sweetalert'
 import {useSelector, useDispatch} from 'react-redux'
-import {setActiveUser} from '../../store/actions/usersActions'
+import {setActiveUser} from '../../store/actions/users'
 function Login() {
 
     const activeUser = useSelector(state => state.user)
@@ -33,7 +33,6 @@ function Login() {
 
         try {
             let user = await getUserById()
-            console.log('from login screen',user)
             swal({
                 title: 'Operation Successful',
                 text: 'User login successfully!',
@@ -58,7 +57,6 @@ function Login() {
         try{
             let result = await login(email, password)
             user_id = result.user.uid
-            console.log('User in signin', user_id)
             fetchAuthorizedUser()
         }
         catch(e){

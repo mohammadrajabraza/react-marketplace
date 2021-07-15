@@ -3,9 +3,13 @@ import  {useState} from 'react'
 import { Redirect } from 'react-router-dom'
 import {storeImages, addPost} from '../../config/firebase'
 import swal from 'sweetalert'
+import { useSelector, useDispatch} from 'react-redux'
+import { setPost } from '../../store/actions/posts'
 
-export default function PostAd({activeUser}) {
+export default function PostAd() {
 
+    const activeUser = useSelector(state => state.user)
+    const dispatch = useDispatch()
 
     const [title, setTitle] = useState('')
     const [price, setPrice] = useState('')
@@ -17,7 +21,6 @@ export default function PostAd({activeUser}) {
         try{
             const urls = await storeImages(images)
             setURLs(urls)
-            console.log('save images', URLs)
         }
         catch(e) {
             const {code, message} = e
@@ -28,21 +31,21 @@ export default function PostAd({activeUser}) {
                 dangerMode: true
             })
         }
-
     }
 
-    
     const createAd = async (e) => {
         e.preventDefault()
-        
         try {
             await saveImages()
-            console.log('create Ad', URLs)
-            const result = await addPost(activeUser.id, title, price, URLs)
-            console.log('posting ad result in PostAD', result)
+            await addPost(activeUser.id, title, price, URLs)
+            dispatch(setPost({
+                user_id: activeUser.id,
+                title,
+                price,
+                imagesUrl: URLs
+            }))
         }
         catch(e){
-            console.log(e)
             const {code, message} = e
             swal({
                 title: code,
@@ -53,7 +56,6 @@ export default function PostAd({activeUser}) {
         }
 
     } 
-
 
     return Object.keys(activeUser).length === 0 ?
             <Redirect to="/login"/> :
