@@ -31,13 +31,10 @@ export default function PostAd() {
                 dangerMode: true
             })
         }
-
     }
 
-    
     const createAd = async (e) => {
         e.preventDefault()
-        
         try {
             await saveImages()
             await addPost(activeUser.id, title, price, URLs)
