@@ -73,13 +73,6 @@ function Signup() {
             })
         }
     }
-
-    const resetFeilds = () => {
-        setContact('')
-        setEmail('')
-        setFullName('')
-        setPassword('')
-    }
     
     return activeUser && Object.keys(activeUser).length !== 0 ?
             <Redirect to="/"/> :

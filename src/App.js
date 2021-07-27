@@ -34,6 +34,7 @@ function App() {
 }
     useEffect(() => {
       fetchPostsFromDB()
+      // eslint-disable-next-line
     }, [])
 
   return (
