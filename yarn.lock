@@ -6440,15 +6440,15 @@
   "resolved" "https://registry.npmjs.org/ignore/-/ignore-5.1.8.tgz"
   "version" "5.1.8"
 
+"immer@^8.0.1", "immer@8.0.1":
+  "integrity" "sha512-aqXhGP7//Gui2+UrEtvxZxSquQVXTpZ7KDxfCcKAF3Vysvw0CViVaW9RZ1j1xlIYqaaaipBoqdqeibkc18PNvA=="
+  "resolved" "https://registry.npmjs.org/immer/-/immer-8.0.1.tgz"
+  "version" "8.0.1"
+
 "immer@^9.0.1":
   "integrity" "sha512-2WuIehr2y4lmYz9gaQzetPR2ECniCifk4ORaQbU3g5EalLt+0IVTosEPJ5BoYl/75ky2mivzdRzV8wWgQGOSYQ=="
   "resolved" "https://registry.npmjs.org/immer/-/immer-9.0.5.tgz"
   "version" "9.0.5"
-
-"immer@8.0.1":
-  "integrity" "sha512-aqXhGP7//Gui2+UrEtvxZxSquQVXTpZ7KDxfCcKAF3Vysvw0CViVaW9RZ1j1xlIYqaaaipBoqdqeibkc18PNvA=="
-  "resolved" "https://registry.npmjs.org/immer/-/immer-8.0.1.tgz"
-  "version" "8.0.1"
 
 "import-cwd@^2.0.0":
   "integrity" "sha1-qmzzbnInYShcs3HsZRn1PiQ1sKk="
