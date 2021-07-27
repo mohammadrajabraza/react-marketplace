@@ -1,17 +1,21 @@
-const posts = (state = [], action) => {
+import produce from 'immer'
+const posts = (postsArray = [], action) => {
 
     switch (action.type) {
         case 'POSTS/ADD_ALL':
             return action.payload.posts
         case 'POSTS/ADD':
-            return [
-                ...state,
-                action.payload.post
-            ]
+            return produce(postsArray, draft => {
+                draft.push(action.payload.post)
+            })
+            //     [
+            //     ...postsArray,
+            //     action.payload.post
+            // ]
         case 'POSTS/REMOVE':
-            return state.filter((post) => post.id !== action.payload.id)
+            return postsArray.filter((post) => post.id !== action.payload.id)
         default:
-            return state
+            return postsArray
     }
 }
 
