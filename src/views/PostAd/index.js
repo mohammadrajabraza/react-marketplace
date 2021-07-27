@@ -50,6 +50,11 @@ export default function PostAd() {
                 price,
                 imagesUrl: URLs
             }))
+            swal({
+                title: "Operation Successful",
+                text: "Post added successfully!",
+                icon: 'success'
+            })
             resetFeilds()
         }
         catch(e){
