@@ -13,9 +13,15 @@ export default function PostAd() {
 
     const [title, setTitle] = useState('')
     const [price, setPrice] = useState('')
+    const [fileKey, setFileKey] = useState(true)
     const [images, setImages] = useState([])
     const [URLs, setURLs] = useState([])
     
+    const resetFeilds = () => {
+        setTitle('')
+        setPrice('')
+        setFileKey(!fileKey) 
+    }
     
     const saveImages = async () => {
         try{
@@ -44,6 +50,7 @@ export default function PostAd() {
                 price,
                 imagesUrl: URLs
             }))
+            resetFeilds()
         }
         catch(e){
             const {code, message} = e
@@ -78,7 +85,7 @@ export default function PostAd() {
                         </Form.Group>
                         <Form.Group controlId="PostImage" >
                             <Form.File id="PostImages" label="Ad Images" multiple
-                            onChange={(e) => setImages(e.target.files)}/>
+                            key={fileKey} onChange={(e) => setImages(e.target.files)}/>
                         </Form.Group>
                         <Button variant="primary" type="submit">
                             Post Ad
